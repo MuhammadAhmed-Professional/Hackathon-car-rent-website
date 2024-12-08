@@ -1,21 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+:root{
+  --PrimaryBlue: #3563E9;
+  --LightBlue: #54A6FF;
+  --SecondaryGray: #90A3BF;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+*{
+  margin: 0;
+  line-height: calc(1em + 0.5rem);
+  box-sizing: border-box;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+body{
+  background-color: #F6F7F9; 
+  overflow-x: hidden;
 }
+
+html{
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+img, picture, video, canvas, svg{
+  display: block;
+  max-width: 100%;
+  user-select: none;
+}
+
+#PrimaryButton{
+  background-color: var(--PrimaryBlue);
+  color: white;
+  border-radius: 4px;
+  padding: 14px 28px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+#SecondaryButton{
+  background-color: var(--LightBlue);
+  color: white;
+  border-radius: 4px;
+  padding: 14px 28px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+#CardButton{
+  background-color: var(--PrimaryBlue);
+  color: white;
+  border-radius: 4px;
+  padding: 10px 16px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+#card{
+  min-height: 286px;
+  min-width: 240px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+#card h3{
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+#card p{
+  font-weight: 600;
+  font-size: 12px;
+  color: var(--SecondaryGray);
+}
+
+
+/* card snippit */
+        /* <div id="card">
+          <div className="pl-4 pt-4">
+            <h3>Koenigsegg</h3>
+            <p>sport</p>
+          </div>
+          <div className="flex justify-center itmes-center">
+          <Image src={Koenigsegg} alt="Koenigsegg car" className="pt-8 pb-11 w-[180px]"/>
+          </div>
+          <div className="flex flex-row gap-4 justify-center items-center">
+            <p><Image src={Fuel} alt="Fuel Tank" className="w-[14px] inline"/> 90L</p>
+            <p><Image src={Transmission} alt="Transmission Type" className="w-[14px] inline"/> Manual</p>
+            <p><Image src={Capacity} alt="Capacity of People" className="w-[14px] inline"/> 2 People</p>
+          </div>
+          <div className="flex flex-row gap-4 items-center pt-7 pl-4 pb-4">
+            <h3>$99.00/<span className="font-semibold text-xs text-SecondaryGray">day</span></h3>
+            <a href="#" id="CardButton">Rental Now</a>
+          </div>
+        </div> */

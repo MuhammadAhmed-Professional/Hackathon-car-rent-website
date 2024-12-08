@@ -8,9 +8,16 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily:{
+        PlusJakartaSans:['Plus Jakarta Sans']
+       },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        primaryBlue: "var(--PrimaryBlue)",
+        LightBlue: "var(--LightBlue)",
+        SecondaryGray: "var(--SecondaryGray)"
+
       },
     },
   },
