@@ -40,6 +40,7 @@ img, picture, video, canvas, svg{
   text-align: center;
   font-size: 12px;
   font-weight: 600;
+  transition: all, 0.3s;
 }
 
 #SecondaryButton{
@@ -50,7 +51,25 @@ img, picture, video, canvas, svg{
   text-align: center;
   font-size: 12px;
   font-weight: 600;
+  transition: all, 0.3s;
 }
+
+#SecondaryButton:hover{
+  scale: 1.05;
+}
+
+#PrimaryButton:hover{
+  scale: 1.05;
+}
+
+#SecondaryButton:active{
+  background-color: #1A37A7;
+}
+
+#PrimaryButton:active{
+  background-color: #1A37A7;
+}
+
 
 #CardButton{
   background-color: var(--PrimaryBlue);
@@ -60,6 +79,15 @@ img, picture, video, canvas, svg{
   text-align: center;
   font-size: 12px;
   font-weight: 600;
+  transition: all, 0.3s;
+}
+
+#CardButton:active{
+  background-color: #1A37A7;
+}
+
+#CardButton:hover{
+  scale: 1.05;
 }
 
 #card{
