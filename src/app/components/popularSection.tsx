@@ -1,101 +1,147 @@
+"use client";
 import Image from "next/image";
-import Koenigsegg from "../../../public/images/Koenigsegg.png"
-import Fuel from "../../../public/images/gas-station.png"
-import Transmission from "../../../public/images/tansmission.png"
-import Capacity from "../../../public/images/profile-2user.png"
-import GTR from "../../../public/images/gtr.png"
-import Rolls from "../../../public/images/rolls.png"
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Navigation, Pagination } from "swiper/modules";
 
+import Koenigsegg from "../../../public/images/Koenigsegg.png";
+import Fuel from "../../../public/images/gas-station.png";
+import Transmission from "../../../public/images/tansmission.png";
+import Capacity from "../../../public/images/profile-2user.png";
+import GTR from "../../../public/images/gtr.png";
+import Rolls from "../../../public/images/rolls.png";
+
+interface CarData {
+  name: string;
+  type: string;
+  image: any;
+  fuel: string;
+  transmission: string;
+  capacity: string;
+  price: string;
+}
+
+const carData: CarData[] = [
+  {
+    name: "Koenigsegg",
+    type: "Sport",
+    image: Koenigsegg,
+    fuel: "90L",
+    transmission: "Manual",
+    capacity: "2 People",
+    price: "$99.00/day",
+  },
+  {
+    name: "Nissan GT - R",
+    type: "Sport",
+    image: GTR,
+    fuel: "80L",
+    transmission: "Manual",
+    capacity: "2 People",
+    price: "$80.00/day",
+  },
+  {
+    name: "Rolls - Royce",
+    type: "Sedan",
+    image: Rolls,
+    fuel: "70L",
+    transmission: "Manual",
+    capacity: "4 People",
+    price: "$96.00/day",
+  },
+  {
+    name: "Nissan GT - R",
+    type: "Sport",
+    image: GTR,
+    fuel: "80L",
+    transmission: "Manual",
+    capacity: "2 People",
+    price: "$80.00/day",
+  },
+];
 
 export default function PopularSection() {
   return (
-    <>
-    <div className="flex flex-col justify-center items-center">
-      <div className="flex flex-col gap-5 pt-[31px] w-[20.438rem] min-[1440px]:min-w-[1312px] min-[1440px]:pt-[47px]">
-        <div className="flex justify-between items-center">
-          <p className="text-SecondaryGray font-semibold text-sm">Popular Car</p>
-          <a href="#" className="text-primaryBlue font-semibold text-xs">View All</a>
+    <div className="flex flex-col justify-center items-center  py-8 px-4">
+      <div className=" w-[343px] md:w-[740px] lg:w-[940px] min-[1440px]:w-[1300px]">
+        <div className="flex justify-between items-center mb-5">
+          <p className="text-gray-600 font-semibold text-sm">Popular Car</p>
+          <a href="#" className="text-blue-600 font-semibold text-xs">
+            View All
+          </a>
         </div>
-        <div className="flex gap-[19px] sm:justify-center min-[1440px]:gap-8">
-          <div id="card" className="min-[1440px]:w-[304px]">
-            <div className="pl-4 pt-4 min-[1440px]:pt-6 min-[1440px]:pl-6">
-              <h3>Koenigsegg</h3>
-              <p>Sport</p>
-            </div>
-            <div className="flex justify-center itmes-center ">
-            <Image src={Koenigsegg} alt="Koenigsegg car" className="pt-8 pb-11 w-[180px] min-[1440px]:min-w-[232px]"/>
-            </div>
-            <div className="flex flex-row gap-4 justify-center items-center">
-              <p className="min-[1440px]:text-base"><Image src={Fuel} alt="Fuel Tank" className="w-[14px] inline min-[1440px]:w-6"/> 90L</p>
-              <p className="min-[1440px]:text-base"><Image src={Transmission} alt="Transmission Type" className="w-[14px] inline min-[1440px]:w-6"/> Manual</p>
-              <p className="min-[1440px]:text-base"><Image src={Capacity} alt="Capacity of People" className="w-[14px] inline min-[1440px]:w-6"/> 2 People</p>
-            </div>
-            <div className="flex flex-row gap-4 items-center pt-7 pl-4 pb-4 min-[1440px]:pl-6 min-[1440px]:gap-14">
-              <h3 className="min-[1440px]:text-xl">$99.00/<span className="font-semibold text-xs text-SecondaryGray">day</span></h3>
-              <a href="#" id="CardButton" className="min-[1440px]:text-base">Rental Now</a>
-            </div>
-          </div>
-
-          <div id="card" className="min-[1440px]:w-[304px]">
-            <div className="pl-4 pt-4 min-[1440px]:pt-6 min-[1440px]:pl-6">
-              <h3>Nissan GT - R</h3>
-              <p>Sport</p>
-            </div>
-            <div className="flex justify-center itmes-center ">
-            <Image src={GTR} alt="Koenigsegg car" className="pt-8 pb-11 w-[180px] min-[1440px]:min-w-[232px]"/>
-            </div>
-            <div className="flex flex-row gap-4 justify-center items-center">
-              <p className="min-[1440px]:text-base"><Image src={Fuel} alt="Fuel Tank" className="w-[14px] inline min-[1440px]:w-6"/> 80L</p>
-              <p className="min-[1440px]:text-base"><Image src={Transmission} alt="Transmission Type" className="w-[14px] inline min-[1440px]:w-6"/> Manual</p>
-              <p className="min-[1440px]:text-base"><Image src={Capacity} alt="Capacity of People" className="w-[14px] inline min-[1440px]:w-6"/> 2 People</p>
-            </div>
-            <div className="flex flex-row gap-4 items-center pt-7 pl-4 pb-4 min-[1440px]:pl-6 min-[1440px]:gap-14">
-              <h3 className="min-[1440px]:text-xl">$80.00/<span className="font-semibold text-xs text-SecondaryGray">day</span></h3>
-              <a href="#" id="CardButton" className="min-[1440px]:text-base">Rental Now</a>
-            </div>
-          </div>
-
-          <div id="card" className="min-[1440px]:w-[304px]">
-            <div className="pl-4 pt-4 min-[1440px]:pt-6 min-[1440px]:pl-6">
-              <h3>Rolls - Royce</h3>
-              <p>Sedan</p>
-            </div>
-            <div className="flex justify-center itmes-center ">
-            <Image src={Rolls} alt="Koenigsegg car" className="pt-8 pb-11 w-[180px] min-[1440px]:min-w-[232px]"/>
-            </div>
-            <div className="flex flex-row gap-4 justify-center items-center">
-              <p className="min-[1440px]:text-base"><Image src={Fuel} alt="Fuel Tank" className="w-[14px] inline min-[1440px]:w-6"/> 70L</p>
-              <p className="min-[1440px]:text-base"><Image src={Transmission} alt="Transmission Type" className="w-[14px] inline min-[1440px]:w-6"/> Manual</p>
-              <p className="min-[1440px]:text-base"><Image src={Capacity} alt="Capacity of People" className="w-[14px] inline min-[1440px]:w-6"/> 4 People</p>
-            </div>
-            <div className="flex flex-row gap-4 items-center pt-7 pl-4 pb-4 min-[1440px]:pl-6 min-[1440px]:gap-14">
-              <h3 className="min-[1440px]:text-xl">$96.00/<span className="font-semibold text-xs text-SecondaryGray">day</span></h3>
-              <a href="#" id="CardButton" className="min-[1440px]:text-base">Rental Now</a>
-            </div>
-          </div>
-
-          <div id="card" className="min-[1440px]:w-[304px]">
-            <div className="pl-4 pt-4 min-[1440px]:pt-6 min-[1440px]:pl-6">
-              <h3>Nissan GT - R</h3>
-              <p>Sport</p>
-            </div>
-            <div className="flex justify-center itmes-center ">
-            <Image src={GTR} alt="Koenigsegg car" className="pt-8 pb-11 w-[180px] min-[1440px]:min-w-[232px]"/>
-            </div>
-            <div className="flex flex-row gap-4 justify-center items-center">
-              <p><Image src={Fuel} alt="Fuel Tank" className="w-[14px] inline min-[1440px]:w-6"/> 80L</p>
-              <p><Image src={Transmission} alt="Transmission Type" className="w-[14px] inline min-[1440px]:w-6"/> Manual</p>
-              <p><Image src={Capacity} alt="Capacity of People" className="w-[14px] inline min-[1440px]:w-6"/> 2 People</p>
-            </div>
-            <div className="flex flex-row gap-4 items-center pt-7 pl-4 pb-4 min-[1440px]:pl-6 min-[1440px]:gap-14">
-              <h3>$80.00/<span className="font-semibold text-xs text-SecondaryGray">day</span></h3>
-              <a href="#" id="CardButton" className="min-[1440px]:text-base">Rental Now</a>
-            </div>
-          </div>
-        </div>
-      </div> 
-
+        <Swiper
+          modules={[Navigation, Pagination]}
+          spaceBetween={20}
+          slidesPerView={1}
+          navigation
+          pagination={{ clickable: true }}
+          breakpoints={{
+            640: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+            1440: { slidesPerView: 4 },
+          }}
+        >
+          {carData.map((car, index) => (
+            <SwiperSlide key={index}>
+              <div className="bg-white rounded-[10px] overflow-hidden flex flex-col">
+                <div className="p-4">
+                  <h3 className="font-bold text-lg text-gray-800">{car.name}</h3>
+                  <p className="text-gray-500">{car.type}</p>
+                </div>
+                <div className="flex justify-center items-center">
+                  <Image
+                    src={car.image}
+                    alt={`${car.name} car`}
+                    width={232}
+                    height={150}
+                    className="object-contain"
+                  />
+                </div>
+                <div className="flex justify-around py-4 text-gray-600">
+                  <p className="text-sm flex items-center">
+                    <Image
+                      src={Fuel}
+                      alt="Fuel"
+                      width={16}
+                      height={16}
+                      className="mr-2"
+                    />
+                    {car.fuel}
+                  </p>
+                  <p className="text-sm flex items-center">
+                    <Image
+                      src={Transmission}
+                      alt="Transmission"
+                      width={16}
+                      height={16}
+                      className="mr-2"
+                    />
+                    {car.transmission}
+                  </p>
+                  <p className="text-sm flex items-center">
+                    <Image
+                      src={Capacity}
+                      alt="Capacity"
+                      width={16}
+                      height={16}
+                      className="mr-2"
+                    />
+                    {car.capacity}
+                  </p>
+                </div>
+                <div className="flex justify-between items-center px-4 py-4 border-t">
+                  <h3 className="text-gray-800 font-bold">{car.price}</h3>
+                  <a href="#" id="CardButton" className="min-[1440px]:text-base">Rental Now</a>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </div>
-    </>
-  )
+  );
 }
